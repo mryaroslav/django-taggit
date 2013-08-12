@@ -4,7 +4,7 @@ from django import forms
 from django.utils.translation import ugettext as _
 from django.utils import six
 
-from taggit.utils import parse_tags, edit_string_for_tags
+from .utils import parse_tags, edit_string_for_tags
 
 
 class TagWidget(forms.TextInput):

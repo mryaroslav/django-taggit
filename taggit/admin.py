@@ -2,13 +2,15 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from taggit.models import Tag, TaggedItem
+from modeltranslation.admin import TranslationAdmin
+
+from .models import Tag, TaggedItem
 
 
 class TaggedItemInline(admin.StackedInline):
     model = TaggedItem
 
-class TagAdmin(admin.ModelAdmin):
+class TagAdmin(TranslationAdmin):
     inlines = [
         TaggedItemInline
     ]

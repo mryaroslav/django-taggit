@@ -16,9 +16,9 @@ try:
 except ImportError:
     pass  # PathInfo is not used on Django < 1.6
 
-from taggit.forms import TagField
-from taggit.models import TaggedItem, GenericTaggedItemBase
-from taggit.utils import require_instance_manager
+from .forms import TagField
+from .models import TaggedItem, GenericTaggedItemBase
+from .utils import require_instance_manager
 
 
 class TaggableRel(ManyToManyRel):
@@ -57,7 +57,7 @@ class ExtraJoinRestriction(object):
         return extra_where, params
 
 class TaggableManager(RelatedField, Field):
-    def __init__(self, verbose_name=_("Tags"),
+    def __init__(self, verbose_name=_("tags"),
         help_text=_("A comma-separated list of tags."), through=None, blank=False):
         Field.__init__(self, verbose_name=verbose_name, help_text=help_text, blank=blank)
         self.through = through or TaggedItem

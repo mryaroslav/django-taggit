@@ -1,6 +1,8 @@
+# coding: utf-8
+
 from __future__ import unicode_literals
 
-import django
+
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.generic import GenericForeignKey
 from django.db import models, IntegrityError, transaction
@@ -12,8 +14,8 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class TagBase(models.Model):
-    name = models.CharField(verbose_name=_('Name'), unique=True, max_length=100)
-    slug = models.SlugField(verbose_name=_('Slug'), unique=True, max_length=100)
+    name = models.CharField(verbose_name=_('name'), unique=True, max_length=100)
+    slug = models.SlugField(verbose_name=_('slug'), unique=True, max_length=100)
 
     def __str__(self):
         return self.name
@@ -55,8 +57,15 @@ class TagBase(models.Model):
 
 class Tag(TagBase):
     class Meta:
-        verbose_name = _("Tag")
-        verbose_name_plural = _("Tags")
+        verbose_name = _("tag")
+        verbose_name_plural = _("tags")
+        verbose_name_settings = dict(
+            add=u'тег',
+            delete=u'тег',
+            change=u'тег',
+            plural=(u'тег', u'тега', u'тегов'),
+            gender=1
+        )
 
 
 @python_2_unicode_compatible
@@ -109,10 +118,10 @@ class TaggedItemBase(ItemBase):
 
 
 class GenericTaggedItemBase(ItemBase):
-    object_id = models.IntegerField(verbose_name=_('Object id'), db_index=True)
+    object_id = models.IntegerField(verbose_name=_('object id'), db_index=True)
     content_type = models.ForeignKey(
         ContentType,
-        verbose_name=_('Content type'),
+        verbose_name=_('content type'),
         related_name="%(app_label)s_%(class)s_tagged_items"
     )
     content_object = GenericForeignKey()
@@ -155,5 +164,12 @@ class GenericTaggedItemBase(ItemBase):
 
 class TaggedItem(GenericTaggedItemBase, TaggedItemBase):
     class Meta:
-        verbose_name = _("Tagged Item")
-        verbose_name_plural = _("Tagged Items")
+        verbose_name = _("tagged item")
+        verbose_name_plural = _("tagged items")
+        verbose_name_settings = dict(
+            add=u'обьект с тегом',
+            delete=u'обьект с тегом',
+            change=u'обьект с тегом',
+            plural=(u'обьект с тегом', u'обьекта с тегом', u'обьектов с тегом'),
+            gender=1
+        )
