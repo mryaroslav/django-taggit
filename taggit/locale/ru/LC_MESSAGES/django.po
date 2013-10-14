@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Taggit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-13 02:34+0300\n"
+"POT-Creation-Date: 2013-10-14 19:13+0300\n"
 "PO-Revision-Date: 2010-06-11 11:30+0700\n"
 "Last-Translator: Igor 'idle sign' Starikov <idlesign@yandex.ru>\n"
 "Language-Team: \n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: forms.py:24
 msgid "Please provide a comma-separated list of tags."
-msgstr "Укажите теги через запятую."
+msgstr "Укажите метки через запятую."
 
 #: managers.py:60 models.py:61
 msgid "tags"
-msgstr "теги"
+msgstr "метки"
 
 #: managers.py:61
 msgid "A comma-separated list of tags."
-msgstr "Список тегов через запятую."
+msgstr "Список меток через запятую."
 
 #: models.py:17
 msgid "name"
@@ -41,12 +41,12 @@ msgstr "url"
 
 #: models.py:60
 msgid "tag"
-msgstr "тег"
+msgstr "метка"
 
 #: models.py:74
 #, python-format
 msgid "%(object)s tagged with %(tag)s"
-msgstr "обьект «%(object)s» с тегом «%(tag)s»"
+msgstr "обьект «%(object)s» с меткой «%(tag)s»"
 
 #: models.py:121
 msgid "object id"
@@ -58,8 +58,8 @@ msgstr "тип содержимого"
 
 #: models.py:167
 msgid "tagged item"
-msgstr "обьект с тегом"
+msgstr "обьект с меткой"
 
 #: models.py:168
 msgid "tagged items"
-msgstr "обьекты с тегом"
+msgstr "обьекты с метками"
