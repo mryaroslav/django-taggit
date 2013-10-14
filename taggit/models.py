@@ -60,10 +60,10 @@ class Tag(TagBase):
         verbose_name = _("tag")
         verbose_name_plural = _("tags")
         verbose_name_settings = dict(
-            add=u'тег',
-            delete=u'тег',
-            change=u'тег',
-            plural=(u'тег', u'тега', u'тегов'),
+            add=u'метку',
+            delete=u'метку',
+            change=u'метку',
+            plural=(u'метка', u'метки', u'меток'),
             gender=1
         )
 
