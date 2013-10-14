@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 from .models import Tag, TaggedItem
 
@@ -10,7 +10,7 @@ from .models import Tag, TaggedItem
 class TaggedItemInline(admin.StackedInline):
     model = TaggedItem
 
-class TagAdmin(TranslationAdmin):
+class TagAdmin(TabbedTranslationAdmin):
     inlines = [
         TaggedItemInline
     ]
