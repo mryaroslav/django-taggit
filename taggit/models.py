@@ -168,10 +168,10 @@ class TaggedItem(GenericTaggedItemBase, TaggedItemBase):
     class Meta:
         verbose_name = _("tagged item")
         verbose_name_plural = _("tagged items")
-        verbose_name_settings = dict(
-            add=u'обьект с тегом',
-            delete=u'обьект с тегом',
-            change=u'обьект с тегом',
-            plural=(u'обьект с тегом', u'обьекта с тегом', u'обьектов с тегом'),
-            gender=1
-        )
+        verbose_name_extended = {
+            'ru': {
+                'plural': (u'обьект с тегом', u'обьекта с тегом',
+                           u'обьектов с тегом'),
+                'gender': 'he'
+            }
+        }
