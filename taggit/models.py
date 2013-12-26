@@ -59,13 +59,15 @@ class Tag(TagBase):
     class Meta:
         verbose_name = _("tag")
         verbose_name_plural = _("tags")
-        verbose_name_settings = dict(
-            add=u'метку',
-            delete=u'метку',
-            change=u'метку',
-            plural=(u'метка', u'метки', u'меток'),
-            gender=1
-        )
+        verbose_name_extended = {
+            'ru': {
+                'add': u'метку',
+                'delete': u'метку',
+                'change': u'метку',
+                'plural': (u'метка', u'метки', u'меток'),
+                'gender': 'she'
+            },
+        }
 
 
 @python_2_unicode_compatible
